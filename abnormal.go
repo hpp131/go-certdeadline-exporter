@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func divide() int {
-	i := 1
+	i := 0
 	return 10 / i
 }
 
