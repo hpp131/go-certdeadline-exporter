@@ -50,20 +50,8 @@ func checkHttps() (t float64) {
 }
 
 func main() {
-	//checkDomain := *flag.String("domain", "", "a set of domains to check cert's deadline")
-	//
-	//deadline_gauge := prometheus.NewGaugeFunc(prometheus.GaugeOpts{
-	//	Name:      "ssl_cert_deadline",
-	//	Namespace: "default",
-	//	Help:      "computer the distence to expire_time of ssl_cert",
-	//}, checkHttps)
-	//prometheus.MustRegister(deadline_gauge)
-	//http.Handle("/metrics", promhttp.Handler())
-	//fmt.Println("already start tcp listen")
-	//
-	//http.ListenAndServe(":9999", nil)
-	prometheus.MustRegister(NewSslStateCollector("www.baidu.com"))
-	//reg.Register(NewSslStateCollector("https://www.badiu.com"))
-	http.Handle("/metrics", promhttp.Handler())
+	reg := prometheus.NewRegistry()
+	reg.Register(NewSslStateCollector("www.baidu.com"))
+	http.Handle("/metrics", promhttp.HandlerFor(reg, promhttp.HandlerOpts{Registry: reg}))
 	http.ListenAndServe(":9999", nil)
 }
