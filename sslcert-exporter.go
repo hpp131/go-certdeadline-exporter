@@ -45,6 +45,7 @@ func checkHttps() (t map[string]float64) {
 	*/
 	domainString := *flag.String("domains", "", "a set of domain separated by comma")
 	domainSlice := strings.Split(domainString, ",")
+	fmt.Println(domainSlice)
 	var deadlineMap map[string]float64
 	for _, value := range domainSlice {
 		checkUrl := "https://" + value
@@ -54,7 +55,7 @@ func checkHttps() (t map[string]float64) {
 		client := &http.Client{Transport: tr}
 		resp, err := client.Get(checkUrl)
 		fmt.Printf("the panic is happend")
-		defer resp.Body.Close() ///// panic
+		resp.Body.Close() ///// panic
 		if err != nil {
 			fmt.Errorf("requeset is failed", err)
 		}
