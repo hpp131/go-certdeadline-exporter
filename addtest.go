@@ -10,4 +10,6 @@ func main() {
 	testString := flag.String("domains", "", "help")
 	flag.Parse()
 	fmt.Println(*testString)
+	var testslice []string
+	testslice = make([]string)
 }
