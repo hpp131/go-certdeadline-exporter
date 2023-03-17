@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/.idea/abnormal.iml" filepath="$PROJECT_DIR$/.idea/abnormal.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/.idea/code_go.iml" filepath="$PROJECT_DIR$/.idea/code_go.iml" />
->>>>>>> 883fb843c9d7a4101263ed6357a17884fb5f23e2
+      <module fileurl="file://$PROJECT_DIR$/.idea/go-certdeadline-exporter.iml" filepath="$PROJECT_DIR$/.idea/go-certdeadline-exporter.iml" />
     </modules>
   </component>
 </project>
