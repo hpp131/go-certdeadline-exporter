@@ -4,7 +4,7 @@ Between numbers of domain,using comma to split. Start method are as follows:
 go build  sslcert-exporter  && ./sslcert-exporter  -domains=www.xxx.com,www.xx.com  
 
 - Start by container  
-Change Dockerfile "CMD" field, replace target domains which you care
+Change Dockerfile "CMD" field, replace target domains to which you care
 
 ### Implement
 - The custom interface named "Collector" contains 2 methods: describe and collect
